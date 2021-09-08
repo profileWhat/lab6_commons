@@ -7,7 +7,9 @@ import java.io.Serializable;
  */
 public class ServerMessage implements Serializable {
     private final String message;
-    private boolean EndOfScriptExFlag;
+    private boolean endOfScriptExFlag;
+    private boolean endOfClientFlag;
+    private boolean isLoggedUSer;
 
     /**
      * Constructor for set String message
@@ -15,14 +17,14 @@ public class ServerMessage implements Serializable {
      */
     public ServerMessage(String message) {
         this.message = message;
-        this.EndOfScriptExFlag = false;
+        this.endOfScriptExFlag = false;
     }
 
     /**
      * Method for set true End of script executing flag
      */
     public void setEndOfScriptExFlag() {
-        EndOfScriptExFlag = true;
+        endOfScriptExFlag = true;
     }
 
     /**
@@ -30,10 +32,26 @@ public class ServerMessage implements Serializable {
      * @return End of script executing flag
      */
     public boolean isEndOfScriptExFlag() {
-        return EndOfScriptExFlag;
+        return endOfScriptExFlag;
     }
 
     public String getMessage() {
         return message;
+    }
+
+    public void setEndOfClientFlag() {
+        this.endOfClientFlag = true;
+    }
+
+    public boolean isEndOfClientFlag() {
+        return endOfClientFlag;
+    }
+
+    public void setLoggedUSer() {
+        this.isLoggedUSer = true;
+    }
+
+    public boolean isLoggedUSer() {
+        return isLoggedUSer;
     }
 }

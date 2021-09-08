@@ -1,4 +1,4 @@
-package collectionManagementModule;
+package collection_management_module;
 
 import com.google.gson.annotations.Expose;
 
@@ -18,7 +18,7 @@ public class Route implements Serializable {
     private final LocationFrom from; //Поле может быть null
     private final LocationTo to; //Поле может быть null
     private final Double distance; //Поле может быть null, Значение поля должно быть больше 1
-
+    private String routeCreator;
     /**
      * Constructor for load and init fields
      *
@@ -35,14 +35,13 @@ public class Route implements Serializable {
         this.distance = from != null && to != null ? Math.sqrt(Math.pow(from.getX().longValue() - to.getX(), 2)
                 + Math.pow(from.getY().doubleValue() - to.getY(), 2)
                 + Math.pow(from.getZ() - to.getZ(), 2)) : null;
-        this.creationDate = new Date();
     }
 
     /**
      * Method for set creation Date, useless in client, but that method use on server
      */
-    public void setCreationDate() {
-        this.creationDate = new Date();
+    public void setCreationDate(Date date) {
+        this.creationDate = date;
     }
 
     /**
@@ -115,5 +114,13 @@ public class Route implements Serializable {
      */
     public String getName() {
         return name;
+    }
+
+    public void setRouteCreator(String routeCreator) {
+        this.routeCreator = routeCreator;
+    }
+
+    public String getRouteCreator() {
+        return routeCreator;
     }
 }

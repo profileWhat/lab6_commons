@@ -1,6 +1,6 @@
 package commands;
 
-import collectionManagementModule.CoupleIdRoute;
+import collection_management_module.CoupleIdRoute;
 
 /**
  * Class factory for create update command

@@ -1,6 +1,6 @@
 package commands;
 
-import collectionManagementModule.Route;
+import collection_management_module.Route;
 
 /**
  * Class factory for create remove_lower command

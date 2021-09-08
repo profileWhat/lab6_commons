@@ -1,4 +1,4 @@
-package collectionManagementModule;
+package collection_management_module;
 
 import java.io.Serializable;
 
